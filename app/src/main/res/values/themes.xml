@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MyTask" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/dark_green</item>
+        <item name="colorAccent">@color/dark_green</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorSecondary">@color/dark_green</item>
+
+    </style>
+    <style name="editTextPrimary" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

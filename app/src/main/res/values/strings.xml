@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">My Task</string>
+    <string name="login">Login</string>
+    <string name="password">  Password</string>
+    <string name="label">testLable</string>
+    <string name="username_07">  Username(07********)</string>
+    <string name="iwallet">Wallet</string>
+    <string name="hint">  Password</string>
+    <string name="text"> Merchant Wallet </string>
+    <string name="forget_password">Forget Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="confirm">NEXT</string>
+    <string name="noCode_hint">+962</string>
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="city_hint">City</string>
+    <string name="national_hint"> </string>
+    <string name="haveAcc">Already Have Account</string>
+    <string name="regImg_component">Wallet Component\n</string>
+
+    <string name="sign_in">Sign in</string>
+    <string name="Sign_in">Sign in\n</string>
+    <string name="code_resend">I Don\'t Receive Code Resend</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="start">start</string>
+    <string name="be_ready">Be Ready</string>
+    <string name="should_scan_id_selfie">You should Scan your ID and take a selfie</string>
+    <string name="face_img_id">face img id</string>
+    <string name="front_img_id">front img id</string>
+    <string name="back_img_id">back img id</string>
+    <string name="crate">crate</string>
+    <string name="verify">verified</string>
+    <string name="create">create</string>
+    <string name="verified">Verified</string>
+    <string name="first_middle_last_name">First Middle Last Name</string>
+    <string name="create_password">Password</string>
+    <string name="finish">finish</string>
+    <string name="create_password_txt">Create Password</string>
+    <string name="pass_component">password component</string>
+    <string name="reset">reset</string>
+    <string name="forget_password_reset">Forget Password</string>
+    <string name="mobile_number">Mobile Number</string>
+
+
+    <string name="card_image">Card Image</string>
+    <string name="cliq_image">CliQ Image</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_profile">Profile</string>
+    <string name="welcome_wallet_s_owner_name">Welcome Wallet\'s Owner Name</string>
+    <string name="bill_payment">Bill Payment</string>
+    <string name="_200_000_jod">-200.000 JOD</string>
+    <string name="succesfully">Succesfully</string>
+    <string name="you_have_created_wallet_succesfully">You Have Created Wallet\nSuccesfully</string>
+    <string name="done">DONE\n</string>
+    <string name="you_have_reset_password_successfully">You Have Reset Password Successfully</string>
+    <string name="whthin_24_hours_msg">You have created wallet successfully. Whthin 24 hours your wallet will be activated.</string>
+
+
+    <string-array name="nationality_list">
+        <item>Jordan</item>
+        <item>Algeria</item>
+        <item>Armenia</item>
+        <item>Italy</item>
+        <item>Ukraine</item>
+        <item>Brazil</item>
+        <item>Mexico </item>
+        <item>America </item>
+        <item>Canada</item>
+        <item>Chad</item>
+    </string-array>
+
+
+    <string-array name="city_list">
+        <item>New York</item>
+        <item>Los Angeles</item>
+        <item>Chicago</item>
+        <item>Houston</item>
+        <item>Phoenix</item>
+        <item>Philadelphia</item>
+        <item>San Antonio</item>
+        <item>San Diego</item>
+        <item>Dallas</item>
+        <item>San Jose</item>
+    </string-array>
+
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_generate_qr">Scan QR</string>
+    <string name="transaction">Transaction</string>
+    <string name="notification">Notification</string>
+
+
+    <string name="visa">VISA</string>
+    <string name="_01_27">01/27</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="_6383_7383_3749_0208">6383 7383 3749 0208</string>
+    <string name="welcome">Welcome</string>
+
+        <string name="otp_digit_1">OTP Digit 1</string>
+        <string name="otp_digit_2">OTP Digit 2</string>
+        <string name="otp_digit_3">OTP Digit 3</string>
+        <string name="otp_digit_4">OTP Digit 4</string>
+    <string name="pay_bill">Pay Bill</string>
+
+
+</resources>
+
+

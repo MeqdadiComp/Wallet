@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:drawable="@drawable/circle_reg" />
+
+    <item
+        android:drawable="@drawable/check_mark"
+        android:gravity="center" />
+</layer-list>

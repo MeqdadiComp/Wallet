@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:viewBindingIgnore="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/regImg"
+        android:layout_width="107dp"
+        android:layout_height="182dp"
+        android:src="@drawable/component_10"
+        android:text="@string/regImg_component"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <TextView
+        android:id="@+id/haveAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="156dp"
+        android:text="@string/haveAcc"
+        android:textColor="@color/dark_green"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nextButton" />
+
+    <TextView
+
+        android:id="@+id/signInLink"
+        android:layout_width="45dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="104dp"
+        android:text="@string/Sign_in"
+        android:textColor="@color/dark_blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nextButton" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mobileNo"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="33dp"
+        android:gravity="center_vertical"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/regImg">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mobileNoET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/regester_rounded"
+            android:drawablePadding="15dp"
+            android:hint="@string/mobileNumber"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textSize="14sp"
+            android:theme="@style/editTextPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/nationality"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:background="@drawable/regester_rounded"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/black"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:gravity="center_vertical"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileNo"
+        android:theme="@style/editTextPrimary"
+        android:layout_marginTop="10dp"
+        android:hint="@string/national_hint" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nationalID"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/nationality"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="33dp"
+        android:gravity="center_vertical"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nationalIDET"
+            android:hint="@string/national_hint"
+            android:maxLength="6"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/regester_rounded"
+            android:drawablePadding="15dp"
+            android:inputType="number"
+            android:theme="@style/editTextPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/city"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:background="@drawable/regester_rounded"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/black"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="33dp"
+            android:gravity="center_vertical"
+            app:boxCornerRadiusBottomEnd="0dp"
+            app:boxCornerRadiusBottomStart="0dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxStrokeWidth="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:theme="@style/editTextPrimary"
+            app:layout_constraintTop_toBottomOf="@id/nationalID" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:background="@drawable/rounded_confirm_rejester"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="#02434C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="690dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="17dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

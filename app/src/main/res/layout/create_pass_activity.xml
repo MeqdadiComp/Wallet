@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:viewBindingIgnore="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/passImg"
+        android:layout_width="108dp"
+        android:layout_height="165dp"
+        android:src="@drawable/passwordkey"
+        android:text="@string/pass_component"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <TextView
+        android:id="@+id/createPass_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="96dp"
+        android:gravity="center"
+        android:text="@string/create_password_txt"
+        android:textAlignment="center"
+        android:textColor="#656565"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passImg" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/createPass"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="33dp"
+        android:gravity="center_vertical"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createPass_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/createPassET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/regester_rounded"
+            android:drawablePadding="15dp"
+            android:hint="@string/create_password"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textSize="14sp"
+            android:theme="@style/editTextPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPass"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="33dp"
+        android:gravity="center_vertical"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createPass">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPassET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/regester_rounded"
+            android:drawablePadding="15dp"
+            android:hint="@string/create_password"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textSize="14sp"
+            android:theme="@style/editTextPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_confirm_rejester"
+        android:text="@string/finish"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="#02434C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
