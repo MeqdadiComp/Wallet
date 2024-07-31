@@ -99,9 +99,10 @@
         <string name="otp_digit_2">OTP Digit 2</string>
         <string name="otp_digit_3">OTP Digit 3</string>
         <string name="otp_digit_4">OTP Digit 4</string>
+
     <string name="pay_bill">Pay Bill</string>
-
-
+    <string name="features">Features</string>
+    <string name="sinettings">Sinettings</string>
 </resources>
 
 
