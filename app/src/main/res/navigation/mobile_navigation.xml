@@ -29,5 +29,10 @@
         android:name="com.saja.mytask.ui.notifications.NotificationsFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_send_cliq_payment"
+        android:name="com.saja.mytask.ui.cliq.CliQSendPaymentFragment"
+        android:label="cliq_send_payment_fragment"
+        tools:layout="@layout/fragment_cliq_send_payment" />
 
 </navigation>

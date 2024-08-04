@@ -61,11 +61,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun addDataToList() {
+        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Send"))
+        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Request"))
+        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Add Beneficiary"))
         servicesList.add(Services(R.drawable.bill, "Pay Bill"))
         servicesList.add(Services(R.drawable.transaction, "Send Money"))
         servicesList.add(Services(R.drawable.cards, "Topup"))
         servicesList.add(Services(R.drawable.bill, "Split Bill"))
-        servicesList.add(Services(R.drawable.cliqlogo, "Saving"))
+
     }
 
     private fun initIdCard() {

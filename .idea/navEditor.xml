@@ -44,13 +44,25 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="navigation_send_cliq_payment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="navigation_transaction">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="178" />
-                            <option name="y" value="365" />
+                            <option name="x" value="318" />
+                            <option name="y" value="444" />
                           </Point>
                         </option>
                       </LayoutPositions>

@@ -101,7 +101,13 @@
         <string name="otp_digit_4">OTP Digit 4</string>
     <string name="pay_bill">Pay Bill</string>
 
-
+    <string name="available_balance">Available Balance</string>
+    <string name="send">Send</string>
+    <string name="alias">Alias</string>
+    <string name="mobile">Mobile</string>
+    <string name="alias_value">Alias Value</string>
+    <string name="amount_jod">Amount (JOD)</string>
+    <string name="request_money">Request Money</string>
 </resources>
 
 
