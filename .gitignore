@@ -38,3 +38,4 @@ replay_pid*
 .gradle/8.7/**
 .gradle/buildOutputCleanup/**
 .idea/vcs.xml
+.idea/**
