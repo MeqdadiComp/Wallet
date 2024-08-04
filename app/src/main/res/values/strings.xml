@@ -95,11 +95,13 @@
     <string name="_6383_7383_3749_0208">6383 7383 3749 0208</string>
     <string name="welcome">Welcome</string>
 
-        <string name="otp_digit_1">OTP Digit 1</string>
-        <string name="otp_digit_2">OTP Digit 2</string>
-        <string name="otp_digit_3">OTP Digit 3</string>
-        <string name="otp_digit_4">OTP Digit 4</string>
+    <string name="otp_digit_1">OTP Digit 1</string>
+    <string name="otp_digit_2">OTP Digit 2</string>
+    <string name="otp_digit_3">OTP Digit 3</string>
+    <string name="otp_digit_4">OTP Digit 4</string>
     <string name="pay_bill">Pay Bill</string>
+    <string name="features">Features</string>
+    <string name="sinettings">Sinettings</string>
 
     <string name="available_balance">Available Balance</string>
     <string name="send">Send</string>
