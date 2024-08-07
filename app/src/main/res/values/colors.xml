@@ -5,6 +5,8 @@
     <color name="cyan_dark">#02434C</color>
     <color name="darker_gray">#A9A9A9</color>
     <color name="dark_gray">#444444</color>
+    <color name="light_gray">#ECECEC</color>
+    <color name="lighter_gray">#707070</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="pink_100">#F8BBD0</color>
@@ -12,7 +14,55 @@
     <color name="red">#7B160F</color>
     <color name="dark_green">#02434C</color>
     <color name="dark_blue">#0037EB</color>
+    <color name="transparent">#00000000</color>
+    <color name="green">#FF00FF00</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="yellow">#FFFFFF00</color>
+    <color name="cyan">#FF00FFFF</color>
+    <color name="magenta">#FFFFFF00</color>
+    <color name="orange">#FFFFA500</color>
+    <color name="purple">#FF800080</color>
+    <color name="pink">#FFFFC0CB</color>
+    <color name="brown">#FF8B4513</color>
+    <color name="grey">#FF808080</color>
+    <color name="lightgray">#FFC0C0C0</color>
+    <color name="darkgray">#FF808080</color>
+    <color name="lightblue">#FFADD8E6</color>
+    <color name="lightgreen">#FF90EE90</color>
+    <color name="lightred">#FFFFC0CB</color>
+    <color name="lightyellow">#FFFFF0F5</color>
+    <color name="lightcyan">#FFADD8E6</color>
+    <color name="lightmagenta">#FFFFC0CB</color>
+    <color name="lightorange">#FFFFA500</color>
+    <color name="lightpurple">#FF800080</color>
+    <color name="lightpink">#FFFFC0CB</color>
+    <color name="lightbrown">#FF8B4513</color>
+    <color name="darkblue">#FF00008B</color>
+    <color name="darkgreen">#FF006400</color>
+    <color name="darkred">#FFFF0000</color>
+    <color name="darkyellow">#FFFFA500</color>
+    <color name="darkcyan">#FF008B8B</color>
+    <color name="darkmagenta">#FFFF00FF</color>
+    <color name="darkorange">#FFFFA500</color>
+    <color name="darkpurple">#FF800080</color>
+    <color name="darkpink">#FFFFC0CB</color>
+    <color name="darkbrown">#FF8B4513</color>
+    <color name="darkgrey">#FF808080</color>
+    <color name="darklightgray">#FFC0C0C0</color>
+    <color name="darkdarkgray">#FF808080</color>
+    <color name="darklightblue">#FFADD8E6</color>
+    <color name="darklightgreen">#FF90EE90</color>
+    <color name="darklightred">#FFFFC0CB</color>
+    <color name="darklightyellow">#FFFFF0F5</color>
+    <color name="darklightcyan">#FFADD8E6</color>
+    <color name="darklightmagenta">#FFFFC0CB</color>
+    <color name="darklightorange">#FFFFA500</color>
+    <color name="darklightpurple">#FF800080</color>
+    <color name="darklightpink">#FFFFC0CB</color>
+    <color name="darklightbrown">#FF8B4513</color>
+    <color name="lightdarkgray">#FF808080</color>
 
+    <color name="border_color">#AAAAAA</color>
 
 
 </resources>

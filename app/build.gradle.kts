@@ -6,8 +6,9 @@ plugins {
 
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-//    alias(libs.plugins.org.jetbrains.kotlin.kapt)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 //    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.dagger.hilt.android)
 }
 
 android {
@@ -42,6 +43,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    hilt {
+        enableAggregatingTask = false
     }
     buildFeatures {
         compose = true
@@ -99,6 +103,17 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
 //    implementation(libs.android.navigation.safe.args)
+
+    implementation(libs.dagger)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+    kapt(libs.dagger.compiler)
+//    implementation(libs.dagger.hilt.android.compiler)
+    implementation(libs.dagger.hilt.android.gradlePlugin)
+    implementation(libs.dagger.hilt.android.testing)
+
+    implementation (libs.glide)
+
 
 
     testImplementation(libs.junit)

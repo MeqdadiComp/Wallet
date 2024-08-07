@@ -2,6 +2,9 @@ package com.saja.mytask;
 
 import android.app.Application;
 
+import dagger.hilt.android.HiltAndroidApp;
+
+@HiltAndroidApp
 public class WalletApplication extends Application {
     private static WalletApplication instance;
 
