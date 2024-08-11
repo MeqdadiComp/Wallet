@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-
 class IdCardAdapter(private  val idCardList: List<IdCard>) : RecyclerView.Adapter<IdCardAdapter.IdCardViewHolder>() {
 
     class IdCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -15,10 +15,12 @@ class IdCardAdapter(private  val idCardList: List<IdCard>) : RecyclerView.Adapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IdCardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_card , parent , false)
+        view.setOnClickListener(View.OnClickListener {
+            view.findNavController().navigate(R.id.navigation_my_card)
+
+        })
         return IdCardViewHolder(view)
-
     }
-
 
     override fun onBindViewHolder(holder: IdCardViewHolder, position: Int) {
         val idCard = idCardList[position]
@@ -30,4 +32,5 @@ class IdCardAdapter(private  val idCardList: List<IdCard>) : RecyclerView.Adapte
     override fun getItemCount(): Int {
         return  idCardList.size
     }
+
 }

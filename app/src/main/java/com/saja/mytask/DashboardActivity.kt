@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.saja.mytask.databinding.ActivityDashboardBinding
+//import com.saja.mytask.ui.myCard.MyCardFragment
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -20,5 +21,8 @@ class DashboardActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_dashboard)
         navView.setupWithNavController(navController)
+
+
+
     }
 }

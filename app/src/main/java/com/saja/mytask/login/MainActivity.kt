@@ -50,8 +50,8 @@ class MainActivity : ComponentActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
             override fun afterTextChanged(s: Editable?) {
-                val UsernameET = s.toString()
-                if (UsernameET.length == 10 && !UsernameET.startsWith("07")) {
+                val usernameET = s.toString()
+                if (usernameET.length == 10 && !usernameET.startsWith("07")) {
                     // If the length is 10 and doesn't start with "07", clear the EditText
 //                    username.setText("")
 //                    username.error = "Username must start with '07' "

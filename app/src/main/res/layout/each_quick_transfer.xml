@@ -10,19 +10,19 @@
         android:id="@+id/card1"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/material_dynamic_neutral80"
+        app:cardBackgroundColor="@color/material_dynamic_neutral95"
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/serviceContainer"
+            android:id="@+id/transferContainer"
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
-            <ImageView
-                android:id="@+id/service1"
+         <!--   <ImageView
+                android:id="@+id/transfer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="fitXY"
@@ -31,13 +31,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                />
+      />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/serviceName1"
+        android:id="@+id/transferName1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"

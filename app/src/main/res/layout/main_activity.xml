@@ -8,17 +8,14 @@
     tools:context=".login.MainActivity">
 
 
-    <TextView
-        android:id="@+id/textWallet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:fontFamily="cursive"
-        android:text="@string/iwallet"
-        android:textAlignment="center"
+    <ImageView
+        android:id="@+id/imgWallet"
+        android:layout_width="260dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="135dp"
+        android:src="@drawable/wallet_img"
+
         android:textColor="@color/white"
-        android:textSize="48sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,14 +24,15 @@
         android:id="@+id/newWordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="155dp"
-        android:layout_marginEnd="55dp"
         android:fontFamily="sans-serif"
-        android:text=""
         android:textColor="#FFFFFF"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.309" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email"
@@ -51,7 +49,7 @@
         app:boxStrokeWidth="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textWallet">
+        app:layout_constraintTop_toBottomOf="@id/imgWallet">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailET"
@@ -157,5 +155,7 @@
         app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -110,6 +110,13 @@
     <string name="alias_value">Alias Value</string>
     <string name="amount_jod">Amount (JOD)</string>
     <string name="request_money">Request Money</string>
+    <string name="request_new_card">REQUEST NEW CARD</string>
+    <string name="internet_purchasing">Internet Purchasing</string>
+    <string name="nfc_status">NFC Status</string>
+    <string name="card_status">Card Status</string>
+    <string name="d_card_list">D Card List</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
 
 

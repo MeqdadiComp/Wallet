@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
+import com.google.android.material.card.MaterialCardView
 import com.saja.mytask.IdCard
 import com.saja.mytask.IdCardAdapter
+import com.saja.mytask.QiuckTransaction
+import com.saja.mytask.QuickTransactionAdapter
 import com.saja.mytask.R
 import com.saja.mytask.Services
 import com.saja.mytask.ServicesAdapter
@@ -35,20 +39,35 @@ class HomeFragment : Fragment() {
     private lateinit var transactionList: ArrayList<Transactions>
     private lateinit var transactionsAdapter: TransactionsAdapter
 
+
+    private lateinit var quickTransactionRecyclerView: RecyclerView
+    private lateinit var quickTransactionList: ArrayList<QiuckTransaction>
+    private lateinit var quickTransactionAdapter: QuickTransactionAdapter
+
+
+//    private lateinit var idRecyclerView: MaterialCardView
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+//        val view: View = inflater.inflate(R.layout.fragment_home,container,false)
+//        idRecyclerView= view.findViewById(R.id.idRecyclerView)
+//        return view
+
+        _binding = FragmentHomeBinding.inflate(inflater, container , false)
         val root: View = binding.root
 
         initRecyclerView()
         initIdCard()
         initTransactions()
+        initQuickTransactionRecyclerView()
 
         return root
     }
+
 
     private fun initRecyclerView() {
         recyclerView = binding.cardRecyclerView
@@ -79,6 +98,38 @@ class HomeFragment : Fragment() {
         servicesList.add(Services(R.drawable.cliqlogo, "Saving"))
         servicesList.add(Services(R.drawable.cards, "Topup"))
     }
+
+
+    private fun initQuickTransactionRecyclerView() {
+        quickTransactionRecyclerView = binding.quickTransactionRecyclerView
+        quickTransactionRecyclerView.setHasFixedSize(true)
+        quickTransactionRecyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        val snapHelper: SnapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(quickTransactionRecyclerView)
+        quickTransactionList = ArrayList()
+
+        addDataToQuickTransactionList()
+        quickTransactionAdapter = QuickTransactionAdapter(quickTransactionList)
+        quickTransactionRecyclerView.adapter = quickTransactionAdapter
+
+        val itemHeight = resources.getDimensionPixelSize(R.dimen.dashboard_item_height)
+        val totalHeight = itemHeight * 5
+        quickTransactionRecyclerView.layoutParams.width = totalHeight
+        quickTransactionRecyclerView.requestLayout()
+    }
+
+    private fun addDataToQuickTransactionList() {
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "SL"))
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "SA"))
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "GW"))
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "RM"))
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "Md"))
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "HM"))
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "BH"))
+        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "MQ"))
+
+    }
+
 
     private fun initIdCard() {
         cardRecyclerView = binding.idRecyclerView
@@ -140,6 +191,13 @@ class HomeFragment : Fragment() {
         transactionList.add(Transactions("CliQ Payment","07 MARC 2024","+450.000 JOD"))
         transactionList.add(Transactions("Bill Payment","08 MARC 2024","+980.070 JOD"))
         transactionList.add(Transactions("CliQ Payment","09 MARC 2024","+2530.430 JOD"))
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//
+//        binding.idRecyclerView.setOnClickListener {
+//        }
     }
 
     override fun onDestroyView() {

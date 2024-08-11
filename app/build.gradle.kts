@@ -98,6 +98,8 @@ dependencies {
 
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.fragment.ktx)
 //    implementation(libs.android.navigation.safe.args)
 
 
@@ -122,4 +124,6 @@ dependencies {
     implementation (libs.retrofit.gson)
     implementation(libs.okhttp)
     implementation (libs.okhttp.logging.interceptor)
+    implementation ("androidx.cardview:cardview:1.0.0")
+
 }
