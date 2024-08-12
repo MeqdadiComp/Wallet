@@ -2,7 +2,7 @@ package com.saja.mytask.ui.cliq
 
 import com.saja.mytask.R
 import com.saja.mytask.databinding.FragmentCliqRequestItemBinding
-import com.saja.mytask.utils.BaseAdapter
+import com.saja.mytask.utils.base.BaseAdapter
 
 class CliqRequestAdapter(
     list: List<CliqRequestModel>,

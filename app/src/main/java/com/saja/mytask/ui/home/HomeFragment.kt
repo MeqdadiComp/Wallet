@@ -5,21 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
-import com.google.android.material.card.MaterialCardView
-import com.saja.mytask.IdCard
-import com.saja.mytask.IdCardAdapter
 import com.saja.mytask.QiuckTransaction
 import com.saja.mytask.QuickTransactionAdapter
 import com.saja.mytask.R
-import com.saja.mytask.Services
-import com.saja.mytask.ServicesAdapter
-import com.saja.mytask.Transactions
-import com.saja.mytask.TransactionsAdapter
+import com.saja.mytask.adapters.IdCardAdapter
+import com.saja.mytask.adapters.ServicesAdapter
+import com.saja.mytask.adapters.TransactionsAdapter
+import com.saja.mytask.models.IdCard
+import com.saja.mytask.models.Services
+import com.saja.mytask.models.Transactions
 import com.saja.mytask.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -87,7 +85,11 @@ class HomeFragment : Fragment() {
         recyclerView.requestLayout()
     }
 
+
     private fun addDataToList() {
+        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Send"))
+        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Request"))
+        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Add Beneficiary"))
         servicesList.add(Services(R.drawable.bill, "Pay Bill"))
         servicesList.add(Services(R.drawable.transaction, "Send Money"))
         servicesList.add(Services(R.drawable.cards, "Topup"))

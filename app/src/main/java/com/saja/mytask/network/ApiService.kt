@@ -2,6 +2,7 @@ package com.saja.mytask.network
 
 import com.saja.mytask.login.model.TokenRequest
 import com.saja.mytask.login.model.TokenResponse
+import com.saja.mytask.network.models.LoginResponse
 import com.saja.mytask.network.models.LookupResponse
 import com.saja.mytask.network.models.RegistrationResponseModel
 import com.saja.mytask.network.models.ResponseBaseModel
@@ -16,14 +17,17 @@ import retrofit2.http.Path
 
 interface ApiService {
 
-    @Headers(
-        "JIBMiddleWareKey: JIBP@ssw0rd",
-        "scope: restrictedService",
-        "Content-Type: application/json",
-        "Authorization: Basic SklCTWlkZGxld2FyZTpKSUJNaWRkbGV3YXJlMjAyMQ=="
-    )
-    @POST("token")
-    fun getToken(@Body request: TokenRequest): Call<TokenResponse>
+//    @Headers(
+//        "JIBMiddleWareKey: JIBP@ssw0rd",
+//        "scope: restrictedService",
+//        "Content-Type: application/json",
+//        "Authorization: Basic SklCTWlkZGxld2FyZTpKSUJNaWRkbGV3YXJlMjAyMQ=="
+//    )
+//    @POST("token")
+//    fun getToken(@Body request: TokenRequest): Call<TokenResponse>
+
+    @POST("Login")
+    fun login(@HeaderMap headers: Map<String, String>,@Body post: Map<String, String>): Call<ResponseBaseModel<LoginResponse>>
 
     @POST("GetLookupByTypeId")
     fun getLookupByTypeId(@HeaderMap headers: Map<String, String>,@Body post: String): Call<ArrayList<LookupResponse>>
