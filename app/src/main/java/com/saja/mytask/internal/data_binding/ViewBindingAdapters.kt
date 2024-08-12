@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.saja.mytask.R
 import com.saja.mytask.ui.cliq.ListAdapterItemBase
-import com.saja.mytask.utils.BaseAdapter
+import com.saja.mytask.utils.base.BaseAdapter
 
 
 @BindingAdapter("setAdapter")

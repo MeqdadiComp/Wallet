@@ -19,19 +19,40 @@ import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AlertDialog
 //import androidx.tracing.perfetto.handshake.protocol.Response
 import com.google.android.material.textfield.TextInputEditText
-import com.saja.mytask.DashboardActivity
-import com.saja.mytask.ForgetPasswordActivity
+import com.saja.mytask.ui.DashboardActivity
+import com.saja.mytask.ui.ForgetPasswordActivity
 import com.saja.mytask.R
 import com.saja.mytask.login.model.TokenRequest
 import com.saja.mytask.login.model.TokenResponse
+import com.saja.mytask.login.repo.LoginRepo
 import com.saja.mytask.network.ApiClient
+import com.saja.mytask.network.ApiService
+import com.saja.mytask.network.models.LoginResponse
+import com.saja.mytask.network.models.ResponseBaseModel
+import com.saja.mytask.network.models.TokenResultClass
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import com.saja.mytask.RegisterActivity
+import com.saja.mytask.ui.RegisterActivity
+import com.saja.mytask.utils.AuthInterceptorOkHttpClient
+import com.saja.mytask.utils.Constant
+import com.saja.mytask.utils.Constant.TEST_USER_NAME
+import com.saja.mytask.utils.Constant.TEST_USER_PASSWORD
+import com.saja.mytask.utils.WalletUtils
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
+import javax.inject.Inject
+import javax.inject.Named
 
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Named("APIService")
+    @Inject
+    lateinit var apiService: ApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,13 +77,21 @@ class MainActivity : ComponentActivity() {
 //                    username.setText("")
 //                    username.error = "Username must start with '07' "
 //                    showAlert("Invalid Username", "Username must start with '07'")
-                    Toast.makeText(applicationContext, "Username must start with '07'", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Username must start with '07'",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
                 }
             }
         })
 
         button.setOnClickListener {
+            username.setText(TEST_USER_NAME)
+            passwordEditText.setText(TEST_USER_PASSWORD)
+
+            // Get the entered username and password
             val usernameText = username.text.toString().trim()
             val passwordText = passwordEditText.text.toString().trim()
 
@@ -75,77 +104,103 @@ class MainActivity : ComponentActivity() {
                 Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val apiService = ApiClient.create()
-            val request = TokenRequest("5E2753718B1E99454A02C3633823B3D9")
-            val call: Call<TokenResponse> = apiService.getToken(request)
 
-            call.enqueue(object : Callback<TokenResponse> {
-                override fun onResponse(
-                    call: Call<TokenResponse>,
-                    response: Response<TokenResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        val tokenResponse = response.body()
-                        val token = tokenResponse?.response?.token
-                        if (token != null) {
-                            // Save the token for future use, maybe in shared preferences or in a global variable
-                            saveToken(token)
-                            val intent = Intent(this@MainActivity, DashboardActivity::class.java)
+            LoginRepo.generateJwtToken(
+                applicationContext,
+                apiService
+            ) { context: Context ->
+                CoroutineScope(Dispatchers.IO).launch {
+                    val bodyMap = mutableMapOf<String, String>()
+                    bodyMap["username"] = Constant.TEST_USER_NAME
+                    bodyMap["password"] = Constant.TEST_USER_PASSWORD
+                    bodyMap["userHash"] = ""
+                    bodyMap["userKey"] = ""
+                    LoginRepo.login(context, apiService,bodyMap) { token : TokenResultClass ->
+                        CoroutineScope(Dispatchers.Main).launch {
+                            this@MainActivity.saveToken(token.user?.userKey ?: "")
+                            val intent =
+                                Intent(this@MainActivity, DashboardActivity::class.java)
                             startActivity(intent)
-                            finish() // Finish the current activity to prevent going back to the login screen
-
-
-                        } else {
-                            // Handle the case when token is null
-                            Toast.makeText(
-                                applicationContext,
-                                "Token is null",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            this@MainActivity.finish() // Finish the current activity to prevent going back to the login screen
                         }
-                    } else {
-                        // Handle unsuccessful response
-                        Toast.makeText(
-                            applicationContext,
-                            "Failed to get token: ${response.errorBody()?.string()}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+
                     }
                 }
-
-                override fun onFailure(call: Call<TokenResponse>, t: Throwable) {
-                    // Handle failure
-                    Toast.makeText(
-                        applicationContext,
-                        "Error fetching token: ${t.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            })
-
+            }
         }
 
-        button.setOnClickListener { //
-            val usernameText = username.text.toString().trim()
-            val passwordText = passwordEditText.text.toString().trim()
-
-            if (usernameText.isEmpty()) {
-                Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            if (passwordText.isEmpty()) {
-                Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            // Proceed with your login logic here
-            val intent = Intent(this,DashboardActivity::class.java)
-            startActivity(intent)
+//                login()
 
 
 
-        }
+//            val apiService = ApiClient.create()
+//            val request = TokenRequest("5E2753718B1E99454A02C3633823B3D9")
+//            val call: Call<TokenResponse> = apiService.getToken(request)
+//
+//            call.enqueue(object : Callback<TokenResponse> {
+//                override fun onResponse(
+//                    call: Call<TokenResponse>,
+//                    response: Response<TokenResponse>
+//                ) {
+//                    if (response.isSuccessful) {
+//                        val tokenResponse = response.body()
+//                        val token = tokenResponse?.response?.token
+//                        if (token != null) {
+//                            // Save the token for future use, maybe in shared preferences or in a global variable
+//                            saveToken(token)
+//                            val intent = Intent(this@MainActivity, DashboardActivity::class.java)
+//                            startActivity(intent)
+//                            finish() // Finish the current activity to prevent going back to the login screen
+//
+//
+//                        } else {
+//                            // Handle the case when token is null
+//                            Toast.makeText(
+//                                applicationContext,
+//                                "Token is null",
+//                                Toast.LENGTH_SHORT
+//                            ).show()
+//                        }
+//                    } else {
+//                        // Handle unsuccessful response
+//                        Toast.makeText(
+//                            applicationContext,
+//                            "Failed to get token: ${response.errorBody()?.string()}",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<TokenResponse>, t: Throwable) {
+//                    // Handle failure
+//                    Toast.makeText(
+//                        applicationContext,
+//                        "Error fetching token: ${t.message}",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//            })
+
+//        button.setOnClickListener { //
+//            val usernameText = username.text.toString().trim()
+//            val passwordText = passwordEditText.text.toString().trim()
+//
+//            if (usernameText.isEmpty()) {
+//                Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+//
+//            if (passwordText.isEmpty()) {
+//                Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+//
+//            // Proceed with your login logic here
+//            val intent = Intent(this, DashboardActivity::class.java)
+//            startActivity(intent)
+//
+//
+//        }
 
         create.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -176,7 +231,8 @@ class MainActivity : ComponentActivity() {
                 shopImageView.setColorFilter(Color.WHITE)
                 newWordTextView.text = originalWord
             }
-            shopImageView.tag = if (shopImageView.tag == originalIcon) alternateIcon else originalIcon
+            shopImageView.tag =
+                if (shopImageView.tag == originalIcon) alternateIcon else originalIcon
 
         }
 
