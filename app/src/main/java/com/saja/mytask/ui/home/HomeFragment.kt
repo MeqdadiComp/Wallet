@@ -87,18 +87,10 @@ class HomeFragment : Fragment() {
 
 
     private fun addDataToList() {
-        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Send"))
-        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Request"))
-        servicesList.add(Services(R.drawable.cliqlogo, "CliQ Add Beneficiary"))
-        servicesList.add(Services(R.drawable.bill, "Pay Bill"))
-        servicesList.add(Services(R.drawable.transaction, "Send Money"))
-        servicesList.add(Services(R.drawable.cards, "Topup"))
-        servicesList.add(Services(R.drawable.bill, "Split Bill"))
-        servicesList.add(Services(R.drawable.cliqlogo, "Saving"))
-        servicesList.add(Services(R.drawable.cards, "Topup"))
-        servicesList.add(Services(R.drawable.bill, "Split Bill"))
-        servicesList.add(Services(R.drawable.cliqlogo, "Saving"))
-        servicesList.add(Services(R.drawable.cards, "Topup"))
+        servicesList.add(Services(0, "Pay Bill"))
+        servicesList.add(Services(0, "Click Send"))
+        servicesList.add(Services(0, "Click Request"))
+        servicesList.add(Services(0, "Efwateercom"))
     }
 
 
@@ -121,14 +113,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun addDataToQuickTransactionList() {
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "SL"))
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "SA"))
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "GW"))
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "RM"))
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "Md"))
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "HM"))
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "BH"))
-        quickTransactionList.add(QiuckTransaction(R.drawable.bill, "MQ"))
+        quickTransactionList.add(QiuckTransaction(0, "SL"))
+        quickTransactionList.add(QiuckTransaction(0, "SA"))
+        quickTransactionList.add(QiuckTransaction(0, "GW"))
+        quickTransactionList.add(QiuckTransaction(0, "RM"))
 
     }
 

@@ -123,4 +123,18 @@
     <string name="d_card_list">D Card List</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="add_bill">Add Bill</string>
+    <string name="one_time_bills">One-Time Bills</string>
+    <string name="my_bill">My Bill</string>
+    <string name="unpaid_bill">Unpaid Bill</string>
+    <string name="total_unpaid_bill">Total Unpaid Bill</string>
+    <string name="_821_3">821.3</string>
+    <string name="pay_all">PAY ALL</string>
+    <string name="pay">PAY</string>
+    <string name="electricity">Electricity</string>
+    <string name="_100_10_jod">100.10 JOD</string>
+    <string name="water">Water</string>
+    <string name="customs">Customs</string>
+    <string name="detail">Details</string>
 </resources>

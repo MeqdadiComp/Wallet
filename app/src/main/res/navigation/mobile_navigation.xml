@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment_to_myCardFragment"
             app:destination="@id/navigation_my_card" />
+        <action
+            android:id="@+id/action_navigation_home_to_mainEfawatercomFragment"
+            app:destination="@id/mainEfawatercomFragment" />
     </fragment>
 
     <fragment
@@ -59,6 +62,20 @@
         android:label="PurchasingPopupDialog"
         tools:layout="@layout/item_popup"
     />
+    <fragment
+        android:id="@+id/efawateercomFragment"
+        android:name="com.saja.mytask.ui.EfawateercomFragment"
+        android:label="EfawateercomFragment"
+        tools:layout="@layout/fragment_efawateercom"/>
+    <fragment
+        android:id="@+id/mainEfawatercomFragment"
+        android:name="com.saja.mytask.ui.MainEfawatercomFragment"
+        android:label="MainEfawatercomFragment"
+        tools:layout="@layout/fragment_main_efawatercom">
+        <action
+            android:id="@+id/action_mainEfawatercomFragment_to_efawateercomFragment"
+            app:destination="@id/efawateercomFragment" />
+    </fragment>
 
 
 </navigation>

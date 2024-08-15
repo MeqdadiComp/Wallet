@@ -51,6 +51,19 @@ class ServicesAdapter(private  val serviceList : List<Services>) : RecyclerView.
 //        holder.serviceNameTv.textDirection = View.TEXT_DIRECTION_LOCALE
 
         }
+
+
+        // Handle Efawatercom
+        holder.serviceImageView.setImageResource(services.serviceImage)
+        holder.serviceNameTv.text = services.serviceName
+
+        if (services.serviceName == "Efwateercom") {
+            holder.itemView.setOnClickListener {
+                it.findNavController().navigate(R.id.mainEfawatercomFragment)
+            }
+        } else {
+            holder.itemView.setOnClickListener(null)
+        }
     }
 
     override fun getItemCount(): Int {
