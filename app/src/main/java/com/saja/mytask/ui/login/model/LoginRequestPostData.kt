@@ -1,4 +1,4 @@
-package com.saja.mytask.login.model
+package com.saja.mytask.ui.login.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,7 +1,5 @@
 package com.saja.mytask.network
 
-import com.saja.mytask.login.model.TokenRequest
-import com.saja.mytask.login.model.TokenResponse
 import com.saja.mytask.network.models.LoginResponse
 import com.saja.mytask.network.models.LookupResponse
 import com.saja.mytask.network.models.RegistrationResponseModel
@@ -9,13 +7,10 @@ import com.saja.mytask.network.models.ResponseBaseModel
 import com.saja.mytask.network.models.UploadImageResponseModel
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.GET
 import retrofit2.http.HeaderMap
-import retrofit2.http.Headers
 import retrofit2.http.POST
-import retrofit2.http.Path
 
-interface ApiService {
+interface ServiceApi {
 
 //    @Headers(
 //        "JIBMiddleWareKey: JIBP@ssw0rd",

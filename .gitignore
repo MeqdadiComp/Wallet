@@ -39,3 +39,7 @@ replay_pid*
 .gradle/buildOutputCleanup/**
 .idea/vcs.xml
 .idea/**
+local.properties
+.idea/workspace.xml
+/.gradle
+/.idea

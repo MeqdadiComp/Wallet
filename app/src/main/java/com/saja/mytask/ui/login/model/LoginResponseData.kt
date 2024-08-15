@@ -1,7 +1,7 @@
-package com.saja.mytask.login.model
+package com.saja.mytask.ui.login.model
 
 data class LoginResponseData(
-    var response:LoginSubResponse,
+    var response: LoginSubResponse,
 )
 
 

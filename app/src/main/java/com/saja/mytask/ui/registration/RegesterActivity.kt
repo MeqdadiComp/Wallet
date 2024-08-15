@@ -1,4 +1,4 @@
-package com.saja.mytask.ui
+package com.saja.mytask.ui.registration
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +16,8 @@ import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.textfield.TextInputEditText
 import com.saja.mytask.R
-import com.saja.mytask.login.MainActivity
+import com.saja.mytask.ui.BottomSheetActivity
+import com.saja.mytask.ui.login.MainActivity
 
 class RegisterActivity : ComponentActivity() {
 

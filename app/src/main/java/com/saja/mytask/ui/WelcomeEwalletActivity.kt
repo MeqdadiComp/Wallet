@@ -7,7 +7,7 @@ import android.os.Looper
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import com.saja.mytask.R
-import com.saja.mytask.login.MainActivity
+import com.saja.mytask.ui.login.MainActivity
 
 class WelcomeEwalletActivity: ComponentActivity() {
 
