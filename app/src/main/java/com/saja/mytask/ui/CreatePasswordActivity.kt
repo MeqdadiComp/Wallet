@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
 import com.saja.mytask.R
-import com.saja.mytask.login.MainActivity
+import com.saja.mytask.ui.login.MainActivity
 
 class CreatePasswordActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

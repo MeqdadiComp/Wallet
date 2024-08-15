@@ -1,25 +1,32 @@
-package com.saja.mytask.utils
+package com.saja.mytask.di
 
-import com.saja.mytask.network.ApiService
+import com.saja.mytask.network.ServiceApi
 import com.saja.mytask.utils.Constant.WALLET_API_BASE_ADAPTER
 import com.saja.mytask.utils.Constant.WALLET_API_BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.FragmentComponent
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
+import javax.inject.Singleton
 
+//@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 @Module
-@InstallIn(ActivityComponent::class)
 object APIServiceModule {
-    @Named("APIService")
+//    @Named("APIService")
+//    @FragmentScoped
+//    @Singleton
+    @ViewModelScoped
     @Provides
-    fun provideBaseAPIService(): ApiService {
+    fun provideServiceApi(): ServiceApi {
         val client = OkHttpClient()
         val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         val clientBuilder: OkHttpClient.Builder =
@@ -29,7 +36,7 @@ object APIServiceModule {
         return Retrofit.Builder().baseUrl("${WALLET_API_BASE_URL}/${ WALLET_API_BASE_ADAPTER}/")
             .addConverterFactory(GsonConverterFactory.create()).client(clientBuilder.build())
             .build()
-            .create(ApiService::class.java)
+            .create(ServiceApi::class.java)
     }
 }
 //

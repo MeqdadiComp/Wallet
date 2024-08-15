@@ -1,0 +1,19 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.saja.mytask.ui.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registration_step_one_fragment"
+            app:destination="@id/registrationStepOneFragment"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationStepOneFragment"
+        android:name="com.saja.mytask.ui.registration.RegistrationStepOneFragment"
+        android:label="RegistrationStepOneFragment" />
+</navigation>

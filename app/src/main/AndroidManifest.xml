@@ -47,7 +47,7 @@
         <activity android:name=".ui.SuccessBoxActivity" />
 
         <activity
-            android:name=".login.MainActivity"
+            android:name=".ui.login.MainActivity"
             android:exported="true">
             <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
