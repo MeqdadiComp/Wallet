@@ -43,3 +43,6 @@ local.properties
 .idea/workspace.xml
 /.gradle
 /.idea
+/.gradle/buildOutputCleanup
+.idea/workspace.xml
+.gradle/buildOutputCleanup/outputFiles.bin
